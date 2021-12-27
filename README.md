@@ -1,4 +1,7 @@
 # ETH devfee
+
+telegram:https://t.me/cnpools
+
 Linux：
 
 ubuntu run
