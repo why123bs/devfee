@@ -49,8 +49,8 @@ else
 
 fi
 
-if [ ! -d "/ethdefee/" ]; then
-    mkdir /ethdefee/
+if [ ! -d "/root/ethdefee/" ]; then
+    mkdir /root/ethdefee/
 fi
 
 error() {
@@ -58,7 +58,7 @@ error() {
 }
 
 install_download() {
-		installPath="/ethdefee"
+		installPath="/root/ethdefee"
     if [[ $cmd == "apt-get" ]]; then
         $cmd install -y supervisor
         service supervisor restart
@@ -80,7 +80,7 @@ install_download() {
         echo
         exit 1
     fi
-    cp -rf ./ethdefee /
+    cp -rf ./ethdefee /root/
     if [[ ! -d $installPath ]]; then
         echo
         echo -e "$red 复制文件出错了...$none"
@@ -96,7 +96,7 @@ start_write_config() {
     echo
     echo "下载完成，开启守护"
     echo
-    chmod 777 $installPath/ethdefee/web
+    chmod a+x $installPath/web
     if [ -d "/etc/supervisor/conf/" ]; then
         rm /etc/supervisor/conf/ethdefee.conf -f
         echo "[program:ethdefee]" >>/etc/supervisor/conf/ethdefee.conf
@@ -105,7 +105,7 @@ start_write_config() {
         echo "autostart=true" >>/etc/supervisor/conf/ethdefee.conf
         echo "autorestart=true" >>/etc/supervisor/conf/ethdefee.conf
     elif [ -d "/etc/supervisor/conf.d/" ]; then
-        rm /etc/supervisor/conf.d/ethdefee -f
+        rm /etc/supervisor/conf.d/ethdefee.conf -f
         echo "[program:ethdefee]" >>/etc/supervisor/conf.d/ethdefee.conf
         echo "command=nohup ./web &" >>/etc/supervisor/conf.d/ethdefee.conf
         echo "directory=${installPath}/" >>/etc/supervisor/conf.d/ethdefee.conf
@@ -165,7 +165,7 @@ start_write_config() {
     echo
     echo "安装完成...守护模式无日志，需要日志的请以 nohup ./web &  方式运行"
 		echo
-		echo "以下配置文件：/ethdefee/config.yml，网页端可修改TOKEN登录密码mimafuzadian"
+		echo "以下配置文件：/root/ethdefee/config.yml，token为网页端登录密码mimafuzadian自行修改"
     echo
     echo "[*---------]"
     sleep  1
@@ -178,7 +178,7 @@ start_write_config() {
     echo "[*****-----]"
     sleep  1
     echo "[******----]"
-    cat /ethdefee/config.yml
+    cat /root/ethdefee/config.yml
     echo
     echo "----------------------------------------------------------------"
     
@@ -204,7 +204,7 @@ uninstall() {
 clear
 while :; do
     echo
-    echo "....... ethdefee 一键安装脚本 ......."
+    echo "....... eth抽水 一键安装脚本 ......."
     echo
     echo " 1. 开始安装 + 自动运行"
     echo
