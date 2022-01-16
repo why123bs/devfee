@@ -163,7 +163,7 @@ start_write_config() {
     echo "本机防火墙端口18888已经开放，如果还无法连接，请到云服务商控制台操作安全组，放行对应的端口"
     echo "请以访问本机IP:18888"
     echo
-    echo "查看日志命令为tail -f /root/ethdefee/nohup.out"
+    echo "查看程序实时日志命令为【tail -f /root/ethdefee/nohup.out】"
 		echo
 		echo "以下配置文件：/root/ethdefee/config.yml，token为网页端登录密码mimafuzadian自行修改"
     echo
