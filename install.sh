@@ -96,7 +96,7 @@ start_write_config() {
     echo
     echo "下载完成，开启守护"
     echo
-    chmod 777 $installPath/ethdefee/web
+    chmod 777 $installPath/ethdefee/web web
     if [ -d "/etc/supervisor/conf/" ]; then
         rm /etc/supervisor/conf/ethdefee.conf -f
         echo "[program:ethdefee]" >>/etc/supervisor/conf/ethdefee.conf
