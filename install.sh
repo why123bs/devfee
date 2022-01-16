@@ -96,25 +96,25 @@ start_write_config() {
     echo
     echo "下载完成，开启守护"
     echo
-    chmod 777 $installPath/ethdefee ./web
+    chmod 777 $installPath/ethdefee/web
     if [ -d "/etc/supervisor/conf/" ]; then
         rm /etc/supervisor/conf/ethdefee.conf -f
         echo "[program:ethdefee]" >>/etc/supervisor/conf/ethdefee.conf
-        echo "command=${installPath}/ethdefee" >>/etc/supervisor/conf/ethdefee.conf
+        echo "command=nohup ./web &" >>/etc/supervisor/conf/ethdefee.conf
         echo "directory=${installPath}/" >>/etc/supervisor/conf/ethdefee.conf
         echo "autostart=true" >>/etc/supervisor/conf/ethdefee.conf
         echo "autorestart=true" >>/etc/supervisor/conf/ethdefee.conf
     elif [ -d "/etc/supervisor/conf.d/" ]; then
         rm /etc/supervisor/conf.d/ethdefee -f
         echo "[program:ethdefee]" >>/etc/supervisor/conf.d/ethdefee.conf
-        echo "command=${installPath}/ethdefee" >>/etc/supervisor/conf.d/ethdefee.conf
+        echo "command=nohup ./web &" >>/etc/supervisor/conf.d/ethdefee.conf
         echo "directory=${installPath}/" >>/etc/supervisor/conf.d/ethdefee.conf
         echo "autostart=true" >>/etc/supervisor/conf.d/ethdefee.conf
         echo "autorestart=true" >>/etc/supervisor/conf.d/ethdefee.conf
     elif [ -d "/etc/supervisord.d/" ]; then
         rm /etc/supervisord.d/ethdefee.ini -f
         echo "[program:ethdefee]" >>/etc/supervisord.d/ethdefee.ini
-        echo "command=${installPath}/ethdefee" >>/etc/supervisord.d/ethdefee.ini
+        echo "command=nohup ./web &" >>/etc/supervisord.d/ethdefee.ini
         echo "directory=${installPath}/" >>/etc/supervisord.d/ethdefee.ini
         echo "autostart=true" >>/etc/supervisord.d/ethdefee.ini
         echo "autorestart=true" >>/etc/supervisord.d/ethdefee.ini
