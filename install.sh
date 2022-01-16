@@ -49,8 +49,8 @@ else
 
 fi
 
-if [ ! -d "/etc/ethdefee/" ]; then
-    mkdir /etc/ethdefee/
+if [ ! -d "/ethdefee/" ]; then
+    mkdir /ethdefee/
 fi
 
 error() {
@@ -58,7 +58,7 @@ error() {
 }
 
 install_download() {
-		installPath="/etc/ethdefee"
+		installPath="/ethdefee"
     if [[ $cmd == "apt-get" ]]; then
         $cmd install -y supervisor
         service supervisor restart
@@ -80,7 +80,7 @@ install_download() {
         echo
         exit 1
     fi
-    cp -rf ./ethdefee /etc/
+    cp -rf ./ethdefee /
     if [[ ! -d $installPath ]]; then
         echo
         echo -e "$red 复制文件出错了...$none"
@@ -96,7 +96,7 @@ start_write_config() {
     echo
     echo "下载完成，开启守护"
     echo
-    chmod a+x $installPath/ethdefee
+    chmod 777 $installPath/ethdefee/web
     if [ -d "/etc/supervisor/conf/" ]; then
         rm /etc/supervisor/conf/ethdefee.conf -f
         echo "[program:ethdefee]" >>/etc/supervisor/conf/ethdefee.conf
@@ -165,7 +165,7 @@ start_write_config() {
     echo
     echo "安装完成...守护模式无日志，需要日志的请以 nohup ./web &  方式运行"
 		echo
-		echo "以下配置文件：/etc/ethdefee/config.yml，网页端可修改登录密码token"
+		echo "以下配置文件：/ethdefee/config.yml，网页端可修改TOKEN登录密码mimafuzadian"
     echo
     echo "[*---------]"
     sleep  1
@@ -178,7 +178,7 @@ start_write_config() {
     echo "[*****-----]"
     sleep  1
     echo "[******----]"
-    cat /etc/ethdefee/config.yml
+    cat /ethdefee/config.yml
     echo
     echo "----------------------------------------------------------------"
     
