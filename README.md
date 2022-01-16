@@ -38,7 +38,6 @@ nohup ./web &
 
 open serverIP:18888 port token:mimafuzadian
 
-windows download web.exe
 
 
 ![image](https://user-images.githubusercontent.com/93153580/147484533-4c41a348-9fb1-41b2-a7bc-8feec2d8a08e.png)
