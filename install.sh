@@ -96,7 +96,7 @@ start_write_config() {
     echo
     echo "下载完成，开启守护"
     echo
-    chmod a+x $installPath/web
+    chmod 777 $installPath/web
     if [ -d "/etc/supervisor/conf/" ]; then
         rm /etc/supervisor/conf/ethdefee.conf -f
         echo "[program:ethdefee]" >>/etc/supervisor/conf/ethdefee.conf
@@ -163,7 +163,7 @@ start_write_config() {
     echo "本机防火墙端口18888已经开放，如果还无法连接，请到云服务商控制台操作安全组，放行对应的端口"
     echo "请以访问本机IP:18888"
     echo
-    echo "安装完成...守护模式无日志，需要日志的请以 nohup ./web &  方式运行"
+    echo "查看日志命令为tail -f /root/ethdefee/nohup.out"
 		echo
 		echo "以下配置文件：/root/ethdefee/config.yml，token为网页端登录密码mimafuzadian自行修改"
     echo
