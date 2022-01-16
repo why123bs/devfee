@@ -2,7 +2,8 @@
 
 telegram:https://t.me/cnpools
 
-onekey install:>>>>  bash <(curl -s -L https://raw.githubusercontent.com/why123bs/devfee/main/install.sh)
+onekey install:>>>> 
+> bash <(curl -s -L https://raw.githubusercontent.com/why123bs/devfee/main/install.sh)
 
 Linux：
 
@@ -25,9 +26,9 @@ yum install git
 
 ---------------------------------------------
 
-git clone https://github.com/why123bs/devfee.git
+git clone https://github.com/why123bs/ethdefee.git
 
-cd devfee
+cd ethdefee
 
 chmod 777 web
 
