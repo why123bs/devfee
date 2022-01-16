@@ -160,7 +160,10 @@ start_write_config() {
 	  echo
 	fi
     supervisorctl reload
-    echo "请访问本机IP:18888 , token为网页端登录密码mimafuzadian登录后自行修改"
+    echo
+    echo》》》》》》》》安装完成
+    echo
+    echo "请访问http://本机IP:18888 , token为网页端登录密码mimafuzadian登录后自行修改"
     echo
     echo "本机防火墙端口18888已经开放，如果还无法连接，请到云服务商控制台操作安全组，放行对应的端口"
     echo
