@@ -160,14 +160,15 @@ start_write_config() {
 	  echo
 	fi
     supervisorctl reload
+    echo "请访问本机IP:18888 , token为网页端登录密码mimafuzadian登录后自行修改"
+    echo
     echo "本机防火墙端口18888已经开放，如果还无法连接，请到云服务商控制台操作安全组，放行对应的端口"
-    echo "请以访问本机IP:18888"
     echo
     echo "本地端口打开SSL，矿机到服务器就是SSL加密链接，服务器到代理矿池可以是任意方式"
 		echo  
-		echo "以下配置文件：/root/ethdefee/config.yml，token为网页端登录密码mimafuzadian自行修改"
+		echo "配置文件：/root/ethdefee/config.yml，"
 		echo
-    echo "初次安装尽量重启服务器，重启命令 reboot"
+    echo "初次安装须要重启服务器，重启命令 reboot"
     echo
     echo "[*---------]"
     sleep  1
