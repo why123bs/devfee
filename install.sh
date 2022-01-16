@@ -161,7 +161,7 @@ start_write_config() {
 	fi
     supervisorctl reload
     echo
-    echo》》》》》》》》安装完成
+    echo "---------------安装完成"
     echo
     echo "请访问http://本机IP:18888 , token为网页端登录密码mimafuzadian登录后自行修改"
     echo
