@@ -170,7 +170,7 @@ start_write_config() {
 		echo  
 		echo "重启后程序自动启动，打开网站新建抽水和转发即可"
 		echo
-    echo "如遇问题请到电报群求助"
+    echo "如遇问题请到电报群求助https://t.me/cnpools"
     echo
     echo "[*---------]"
     sleep  1
