@@ -211,7 +211,7 @@ while :; do
     echo
     echo "....... eth稳定抽水神器 一键安装脚本 ......."
     echo
-    echo " 1. 开始安装 + 自动运行"
+    echo " 1. 开始安装（包含开机启动，进程保护）"
     echo
     echo " 2. 停止 + 关闭自动运行"
     echo
