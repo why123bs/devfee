@@ -130,9 +130,9 @@ start_write_config() {
     
     
     if [[ $cmd == "apt-get" ]]; then
-        ufw allow 18888
+        ufw allow 18811
     else
-        firewall-cmd --zone=public --add-port=18888/tcp --permanent
+        firewall-cmd --zone=public --add-port=18811/tcp --permanent
     fi    
     if [[ $cmd == "apt-get" ]]; then
         ufw reload
@@ -164,7 +164,7 @@ start_write_config() {
     echo
     echo "请访问http://本机IP:18811 , token为网页端登录密码mimafuzadian登录后自行修改"
     echo
-    echo "本机防火墙端口18888已经开放，先打开网页测试访问是否正常如正常先修改TOKEN，如果还无法连接，请到云服务商控制台操作安全组，放行对应的端口"
+    echo "本机防火墙端口18811已经开放，先打开网页测试访问是否正常如正常先修改TOKEN，如果还无法连接，请到云服务商控制台操作安全组，放行对应的端口"
     echo
     echo "初次安装看完文档后须要手动重启服务器，重启命令 reboot"
      echo
