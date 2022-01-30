@@ -162,11 +162,13 @@ start_write_config() {
     supervisorctl reload
     echo "---------------安装完成"
     echo
-    echo "请访问http://本机IP:18888 , token为网页端登录密码mimafuzadian登录后自行修改"
+    echo "请访问http://本机IP:18811 , token为网页端登录密码mimafuzadian登录后自行修改"
     echo
     echo "本机防火墙端口18888已经开放，先打开网页测试访问是否正常如正常先修改TOKEN，如果还无法连接，请到云服务商控制台操作安全组，放行对应的端口"
     echo
     echo "初次安装看完文档后须要手动重启服务器，重启命令 reboot"
+     echo
+    echo "一定要手动修改默认18811端口，不要使用默认"
 		echo  
 		echo "重启后程序自动启动，打开网站新建抽水和转发即可"
 		echo
